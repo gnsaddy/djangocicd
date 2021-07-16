@@ -11,3 +11,12 @@ def geeks_view(request):
     html = "Time is {}".format(now)
     # return response
     return HttpResponse(html)
+
+
+def geeks_2(request):
+    # fetch date and time
+    now = datetime.datetime.now()
+    # convert to string
+    html = "Time is {}".format(now)
+    # return response
+    return HttpResponse(html)
