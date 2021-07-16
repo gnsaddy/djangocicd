@@ -12,3 +12,12 @@ echo "----------------------------------------"
 pwd
 echo "----------------------------------------"
 sudo pip3 install -r requirements.txt
+
+echo "----------------------------------------"
+python3 manage.py migrate
+
+python3 manage.py makemigrations
+echo "----------------------------------------"
+
+python3 manage.py migrate
+echo "----------------------------------------"
