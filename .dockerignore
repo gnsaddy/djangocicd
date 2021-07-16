@@ -1,0 +1,10 @@
+/frontend/node_modules
+/frontend/.next
+
+.idea
+
+
+*.pyc
+*.pyo
+__pycache__/
+!**/__pycache__/

@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+   backend:
+      restart: always
+      container_name: backend
+      build:
+         context: .
+         dockerfile: ./docker/backend/Dockerfile
+      entrypoint: /app/docker/backend/wsgi-entrypoint.sh
+      ports:
+         - "8000:8000"
+      volumes:
+         - ./backend/:/app/backend
+         - static_volume:/app/backend/django_static
+      expose:
+         - 8000
+      env_file:
+         - ./backend/.env.dev
+      networks:
+         - codejee
+
+volumes:
+   static_volume: {}
+
+networks:
+   codejee:
