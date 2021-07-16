@@ -1,3 +1,4 @@
+
 {% comment %} supervisor {% endcomment %}
 
 [program:gunicorn]
@@ -23,3 +24,89 @@ server {
 proxy_pass http://unix:/home/ubuntu/djangocicd/app.sock;
     }
 } 
+
+    1  clear
+    2  sudo apt-get upgrade -y
+    3  ls
+    4  clear
+    5  python3 -m venv env
+    6  sudo apt install python3.8-venv
+    7  clear
+    8  python3 -m venv env
+    9  ls
+   10  source env/bin/activate
+   11  pip3 install django
+   12  git clone https://github.com/gnsaddy/djangocicd.git
+   13  clear
+   14  ls
+   15  pip3 install gunicorn
+   16  sudo apt install nginx
+   17  sudo nginx 
+   18  ls
+   19  cd djangocicd/
+   20  clear
+   21  ls
+   22  cd cicd/
+   23  ls
+   24  cd ..
+   25  gunicorn -b 0.0.0.0:8000 cicd.wsgi:application
+   26  sudo apt install supervisor
+   27  cd /etc/supervisor/conf.d/
+   28  ls
+   29  sudo touch gunicorn.conf
+   30  sudo nano gunicorn.conf 
+   31  ls
+   32  cd djangocicd/
+   33  ls
+   34  clear
+   35  cd /etc/supervisor/conf.d/
+   36  ls
+   37  cat gunicorn.conf.save 
+   38  clear
+   39  ls
+   40  sudo rm gunicorn.conf.save 
+   41  ls
+   42  sudo nano gunicorn.conf 
+   43  clear
+   44  sudo nano gunicorn.conf 
+   45  clear
+   46  sudo nano gunicorn.conf 
+   47  clear
+   48  sudo supervisorctl reread
+   49  sudo mkdir /var/log/gunicorn
+   50  sudo supervisorctl reread
+   51  sudo supervisorctl update
+   52  sudo supervisorctl status
+   53  cd ~
+   54  cd /etc/nginx/sites-available/
+   55  cat default 
+   56  clear
+   57  sudo touch django.conf
+   58  sudo nano django.conf 
+   59  clear
+   60  sudo nano django.conf 
+   61  clear
+   62  sudo nano django.conf 
+   63  clear
+   64  ls
+   65  cat django.conf 
+   66  clear
+   67  pwd
+   68  ls
+   69  sudo nginx -t
+   70  sudo ln django.conf /etc/nginx/sites-enabled/
+   71  sudo nginx -t
+   72  cat django.conf 
+   73  sudo nano django.conf 
+   74  clear
+   75  sudo nginx -t
+   76  sudo ln django.conf /etc/nginx/sites-enabled/
+   77  sudo ls /etc/nginx/sites-enabled/
+   78  sudo rm /etc/nginx/sites-enabled/
+   79  sudo rm /etc/nginx/sites-enabled/*
+   80  sudo ln django.conf /etc/nginx/sites-enabled/
+   81  sudo nginx -t
+   82  sudo service nginx restart
+   83  cd ~
+   84  touch test.txt
+   85  history > test.txt 
