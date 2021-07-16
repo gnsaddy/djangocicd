@@ -6,4 +6,5 @@ echo "Env activated"
 source ~/env/bin/activate
 pwd
 pip3 freeze
-pip3 install -r requirements.txt
+
+pip3 install -r ~/djangocicd/requirements.txt
