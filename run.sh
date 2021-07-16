@@ -22,8 +22,14 @@ echo "----------------------------------------"
 python3 manage.py migrate
 echo "----------------------------------------"
 
-sudo supervisorctl reread
-sudo supervisorctl update
-sudo supervisorctl status
-sudo nginx -t
-sudo service nginx restart
+supervisord -c supervisord.conf
+
+# sudo supervisorctl reread
+
+# sudo supervisorctl update
+
+# sudo supervisorctl status
+
+# sudo nginx -t
+
+# sudo service nginx restart
