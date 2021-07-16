@@ -1,6 +1,18 @@
 version: "3.7"
 
 services:
+   nginx:
+      image: nginx:latest
+      container_name: NGINXDOCKERNAME
+      ports:
+         - "8000:8000"
+      volumes:
+         - ./backend/:/app/backend
+         - ./config/nginx:/etc/nginx/conf.d
+         - static_volume:/app/backend/django_static
+      depends_on:
+         - backend
+
    backend:
       restart: always
       container_name: backend
@@ -9,7 +21,7 @@ services:
          dockerfile: ./docker/backend/Dockerfile
       entrypoint: /app/docker/backend/wsgi-entrypoint.sh
       ports:
-         - "8000:8000"
+         - "8000"
       volumes:
          - ./backend/:/app/backend
          - static_volume:/app/backend/django_static

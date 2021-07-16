@@ -20,5 +20,5 @@ cd /home/ubuntu/djangocicd
 # python3 manage.py migrate
 echo "----------------------------------------"
 
-docker-compose build --no-cache
-docker-compose up -d
+sudo docker-compose build --no-cache
+sudo docker-compose up -d
