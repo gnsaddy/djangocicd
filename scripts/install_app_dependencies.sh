@@ -2,7 +2,7 @@
 
 source env/bin/activate
 
-cd /home/ubuntu/djangocicd
+cd ~/djangocicd
 
 pip3 install -r requirements.txt
 
