@@ -1,20 +1,13 @@
 version: 0.0
 os: linux
 files:
-   - source: /
-     destination: /home/ubuntu/djangocicd
-permissions:
-   - object: /home/ubuntu
-     owner: ubuntu
-     group: ubuntu
-     type:
-        - directory
-        - file
+   - source: .
+     destination: /home/ubuntu/djangocicd/
 hooks:
    AfterInstall:
-      - location: scripts/install_app_dependencies
+      - location: install.sh
         timeout: 300
-        runas: ubuntu
+        runas: root
    # ApplicationStart:
    #  - location: scripts/start_server
    #    timeout: 300
