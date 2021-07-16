@@ -5,7 +5,7 @@ files:
      destination: /home/ubuntu/djangocicd/
 hooks:
    AfterInstall:
-      - location: install.sh
+      - location: ./install.sh
         timeout: 300
         runas: root
    # ApplicationStart:
